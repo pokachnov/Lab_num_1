@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include "arrays.h"
 #include "arrays.c"
+#ifdef _WIN32
 #include <windows.h>
+#endif
 
-int main(void)
-{
-    SetConsoleCP(65001);
-    SetConsoleOutputCP(65001);
+int main(){
+    #ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    #endif
+
     double A[CAPACITY];
     double B[CAPACITY];
     double p[3];
